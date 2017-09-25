@@ -46,7 +46,9 @@ class LinkedList {
             for(let i=1; i<=index; i++) {
                 tmp = tmp.next
             }
-            tmp.data = data
+            let node = new Node(data, tmp.prev, tmp)
+            tmp.prev.next = node            
+            tmp = node
         }
 
         return this
